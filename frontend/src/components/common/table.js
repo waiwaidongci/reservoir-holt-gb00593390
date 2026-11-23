@@ -12,8 +12,8 @@ export function table(columns, rows, {caption, empty = '暂无记录', pageSize 
   const next = button('下一页', {class:'quiet', onClick: () => { offset += pageSize; paint(); }});
   function paint() {
     const end = Math.min(rows.length, offset + pageSize);
-    body.replaceChildren(...rows.slice(offset, end).map(row =>
-      el('tr', {}, columns.map(col => el('td', {}, col.render ? col.render(row) : value(row[col.key]))))));
+    body.replaceChildren(...rows.slice(offset, end).map((row, index) =>
+      el('tr', {}, columns.map(col => el('td', {}, col.render ? col.render(row, offset + index) : value(row[col.key]))))));
     count.textContent = `${offset + 1}–${end} / ${rows.length}`;
     prev.disabled = offset === 0;
     next.disabled = end === rows.length;

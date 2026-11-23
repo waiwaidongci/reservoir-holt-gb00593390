@@ -38,7 +38,7 @@ SPEC = {
     "decision": "高位巡检复核",
     "action": "登记巡检决定",
     "modes": ["加密巡检", "补测后重跑", "按班次巡检"],
-    "pages": ["雨水回用值班总览", "晨检液位台账", "池位预测设置", "水位预报与评估", "高位巡检复核", "机电交班报告"],
+    "pages": ["雨水回用值班总览", "晨检液位台账", "池位预测设置", "水位预报与评估", "高位巡检复核", "机电交班报告", "巡查排班", "巡查交班"],
     "fields": [
         {"key": "reservoir_id", "label": "水池编号", "type": "string", "required": True, "max_length": 40},
         {"key": "reading_date", "label": "晨检日期", "type": "date", "required": True},

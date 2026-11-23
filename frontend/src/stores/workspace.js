@@ -19,4 +19,17 @@ export const workspace = {
   schedule: data => call('/schedules', data),
   disable: id => call(`/schedules/${id}/disable`, {}),
   download: (path, filename) => saveFile(path, session.token, filename),
+  // 巡查排班
+  patrolPools: () => call('/patrol/pools'),
+  savePool: data => call('/patrol/pools', data),
+  patrolEdges: () => call('/patrol/edges'),
+  saveEdge: data => call('/patrol/edges', data),
+  patrolShifts: () => call('/patrol/shifts'),
+  createShift: data => call('/patrol/shifts', data),
+  patrolPlans: id => call(`/patrol/shifts/${id}/plans`),
+  activatePlan: id => call(`/patrol/shifts/${id}/plan`, {}),
+  replan: data => call('/patrol/replan', data),
+  patrolCheckins: id => call(`/patrol/shifts/${id}/checkins`),
+  checkin: data => call('/patrol/checkins', data),
+  handover: id => call(`/patrol/shifts/${id}/handover`),
 };
